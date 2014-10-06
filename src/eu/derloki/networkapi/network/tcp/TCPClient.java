@@ -11,7 +11,7 @@ import java.util.Arrays;
 import eu.derloki.networkapi.network.NetworkConnection;
 import eu.derloki.networkapi.network.ReceivedData;
 
-public class TCPConnection extends NetworkConnection{
+public class TCPClient extends NetworkConnection{
 	private Socket socket = null;
 	private InputStream is = null;
 	private OutputStream os = null;
@@ -21,19 +21,19 @@ public class TCPConnection extends NetworkConnection{
 	
 	private boolean connected = false;
 	
-	public TCPConnection(){
+	public TCPClient(){
 		this(1024);
 	}
 		
-	public TCPConnection(int bufferSize){
+	public TCPClient(int bufferSize){
 		super(bufferSize);
 	}
 	
-	public TCPConnection(InetAddress addr, int port) throws IOException{
+	public TCPClient(InetAddress addr, int port) throws IOException{
 		this(addr,port,1024);
 	}
 	
-	public TCPConnection(InetAddress addr, int port, int bufferSize) throws IOException{
+	public TCPClient(InetAddress addr, int port, int bufferSize) throws IOException{
 		super(bufferSize);
 		connect(addr, port);
 	}
