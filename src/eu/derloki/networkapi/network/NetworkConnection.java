@@ -1,6 +1,6 @@
 package eu.derloki.networkapi.network;
 
-public abstract class NetworkConnection {
+public abstract class NetworkConnection implements AutoCloseable{
 	protected byte[] buffer;
 	protected int bufferSize;
 	
